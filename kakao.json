@@ -1,0 +1,70 @@
+{
+  "documents": [
+    {
+      "address_name": "서울 마포구 연남동 509-19",
+      "category_group_code": "FD6",
+      "category_group_name": "음식점",
+      "category_name": "음식점 > 간식 > 제과,베이커리",
+      "distance": "",
+      "id": "1970375731",
+      "phone": "0507-1328-8235",
+      "place_name": "스트로베리32",
+      "place_url": "http://place.map.kakao.com/1970375731",
+      "road_address_name": "서울 마포구 연남로5길 6-6",
+      "x": "126.921269185872",
+      "y": "37.5625111400856"
+    },
+    {
+      "address_name": "서울 마포구 서교동 345-26",
+      "category_group_code": "",
+      "category_group_name": "",
+      "category_name": "가정,생활 > 패션 > 의류판매",
+      "distance": "",
+      "id": "1861220317",
+      "phone": "",
+      "place_name": "피치스트로베리",
+      "place_url": "http://place.map.kakao.com/1861220317",
+      "road_address_name": "서울 마포구 와우산로23길 35-3",
+      "x": "126.92331931041",
+      "y": "37.5544269425586"
+    },
+    {
+      "address_name": "충남 논산시 대교동 319",
+      "category_group_code": "",
+      "category_group_name": "",
+      "category_name": "여행 > 축제",
+      "distance": "",
+      "id": "8212766",
+      "phone": "041-746-8388",
+      "place_name": "논산딸기축제",
+      "place_url": "http://place.map.kakao.com/8212766",
+      "road_address_name": "",
+      "x": "127.081606618587",
+      "y": "36.2099717225322"
+    },
+    {
+      "address_name": "서울 마포구 동교동 150-10",
+      "category_group_code": "AD5",
+      "category_group_name": "숙박",
+      "category_name": "여행 > 숙박 > 게스트하우스",
+      "distance": "",
+      "id": "27109856",
+      "phone": "010-3517-4265",
+      "place_name": "딸기핑크게스트하우스",
+      "place_url": "http://place.map.kakao.com/27109856",
+      "road_address_name": "서울 마포구 동교로30길 22",
+      "x": "126.924898079293",
+      "y": "37.5600429716748"
+    }
+  ],
+  "meta": {
+    "is_end": true,
+    "pageable_count": 4,
+    "same_name": {
+      "keyword": "strawberry",
+      "region": [],
+      "selected_region": ""
+    },
+    "total_count": 4
+  }
+}
