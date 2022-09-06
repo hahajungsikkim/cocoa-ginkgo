@@ -1,4 +1,101 @@
 ###
-GET http://localhost:8080/v1/place?keyword=strawberry
+GET http://localhost:8080/v1/place?keyword=스타필드
 
 ###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=고양이
+
+###
+GET http://localhost:8080/v1/place?keyword=곱창
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=막창
+
+###
+GET http://localhost:8080/v1/place?keyword=막창
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=양대창
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=삼겹살
+
+###
+GET http://localhost:8080/v1/place?keyword=삼겹살
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=삼겹살
+
+###
+GET http://localhost:8080/v1/place?keyword=삼겹살
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=PC방
+
+###
+GET http://localhost:8080/v1/place?keyword=메가박스
+
+###
+GET http://localhost:8080/v1/place?keyword=롯데시네마
+
+###
+GET http://localhost:8080/v1/place?keyword=롯데시네마
+
+###
+GET http://localhost:8080/v1/place?keyword=노래방
+
+###
+GET http://localhost:8080/v1/place?keyword=노래방
+
+###
+GET http://localhost:8080/v1/place?keyword=삼성전자
+
+###
+GET http://localhost:8080/v1/place?keyword=삼성전자
+
+###
+GET http://localhost:8080/v1/place?keyword=삼성전자
+
+###
+GET http://localhost:8080/v1/place?keyword=삼성전자
+
+###
+GET http://localhost:8080/v1/place?keyword=삼성전자
+
+###
+GET http://localhost:8080/v1/place?keyword=래미안
+
+###
+GET http://localhost:8080/v1/place?keyword=힐스테이트
+
+###
+GET http://localhost:8080/v1/place?keyword=힐스테이트
+
+###
+GET http://localhost:8080/v1/place?keyword=삼성전자
+
+###
+GET http://localhost:8080/v1/place?keyword=삼성전자
+
+###
+GET http://localhost:8080/v1/place?keyword=아우디

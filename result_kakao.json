@@ -1,0 +1,84 @@
+{
+  "documents": [
+    {
+      "address_name": "서울 중구 정동 28-2",
+      "category_group_code": "FD6",
+      "category_group_name": "음식점",
+      "category_name": "음식점 \u003e 양식 \u003e 스테이크,립",
+      "distance": "",
+      "id": "15982071",
+      "phone": "02-777-2254",
+      "place_name": "정원레스토랑 어반가든",
+      "place_url": "http://place.map.kakao.com/15982071",
+      "road_address_name": "서울 중구 정동길 12-15",
+      "x": "126.969202859743",
+      "y": "37.5674329910375"
+    },
+    {
+      "address_name": "서울 강남구 청담동 89-6",
+      "category_group_code": "FD6",
+      "category_group_name": "음식점",
+      "category_name": "음식점 \u003e 양식 \u003e 스테이크,립",
+      "distance": "",
+      "id": "26572124",
+      "phone": "02-556-8700",
+      "place_name": "울프강스테이크하우스",
+      "place_url": "http://place.map.kakao.com/26572124",
+      "road_address_name": "서울 강남구 선릉로152길 21",
+      "x": "127.04141558950498",
+      "y": "37.52439983131448"
+    },
+    {
+      "address_name": "서울 용산구 한남동 31-13",
+      "category_group_code": "FD6",
+      "category_group_name": "음식점",
+      "category_name": "음식점 \u003e 양식 \u003e 스테이크,립",
+      "distance": "",
+      "id": "604720323",
+      "phone": "02-322-0801",
+      "place_name": "오스테리아 오르조 한남",
+      "place_url": "http://place.map.kakao.com/604720323",
+      "road_address_name": "서울 용산구 한남대로20길 47",
+      "x": "127.00949263719748",
+      "y": "37.53488535979127"
+    },
+    {
+      "address_name": "서울 강남구 신사동 603-1",
+      "category_group_code": "FD6",
+      "category_group_name": "음식점",
+      "category_name": "음식점 \u003e 양식 \u003e 스테이크,립",
+      "distance": "",
+      "id": "1248615345",
+      "phone": "02-3442-7734",
+      "place_name": "텍사스데브라질 압구정점",
+      "place_url": "http://place.map.kakao.com/1248615345",
+      "road_address_name": "서울 강남구 논현로 854",
+      "x": "127.028865697479",
+      "y": "37.5253207856728"
+    },
+    {
+      "address_name": "제주특별자치도 제주시 구좌읍 송당리 1581-1",
+      "category_group_code": "FD6",
+      "category_group_name": "음식점",
+      "category_name": "음식점 \u003e 양식 \u003e 스테이크,립",
+      "distance": "",
+      "id": "1066733876",
+      "phone": "070-7798-1447",
+      "place_name": "치저스",
+      "place_url": "http://place.map.kakao.com/1066733876",
+      "road_address_name": "제주특별자치도 제주시 구좌읍 비자림로 1785",
+      "x": "126.774018571495",
+      "y": "33.4684714634794"
+    }
+  ],
+  "meta": {
+    "is_end": false,
+    "pageable_count": 45,
+    "same_name": {
+      "keyword": "스테이크",
+      "region": [],
+      "selected_region": ""
+    },
+    "total_count": 8090
+  }
+}

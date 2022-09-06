@@ -1,0 +1,63 @@
+{
+  "lastBuildDate": "Tue, 06 Sep 2022 14:23:57 +0900",
+  "total": 5,
+  "start": 1,
+  "display": 5,
+  "items": [
+    {
+      "title": "울프강 <b>스테이크<\/b>하우스",
+      "link": "http:\/\/wolfgangssteakhouse.co.kr\/",
+      "category": "음식점>스테이크,립",
+      "description": "",
+      "telephone": "",
+      "address": "서울특별시 강남구 청담동 89-6",
+      "roadAddress": "서울특별시 강남구 선릉로152길 21",
+      "mapx": "315472",
+      "mapy": "547358"
+    },
+    {
+      "title": "Just Steak",
+      "link": "",
+      "category": "음식점>스테이크,립",
+      "description": "",
+      "telephone": "",
+      "address": "서울특별시 강남구 신사동 631-16",
+      "roadAddress": "서울특별시 강남구 언주로152길 11-7",
+      "mapx": "314847",
+      "mapy": "547216"
+    },
+    {
+      "title": "저스틴<b>스테이크<\/b>",
+      "link": "http:\/\/www.justinsteak.co.kr",
+      "category": "음식점>스테이크,립",
+      "description": "",
+      "telephone": "",
+      "address": "서울특별시 용산구 이태원동 129-5",
+      "roadAddress": "서울특별시 용산구 이태원로26길 18",
+      "mapx": "311233",
+      "mapy": "548411"
+    },
+    {
+      "title": "스킬렛 <b>스테이크<\/b>하우스",
+      "link": "",
+      "category": "음식점>스테이크,립",
+      "description": "",
+      "telephone": "",
+      "address": "서울특별시 강남구 신사동 551-11",
+      "roadAddress": "서울특별시 강남구 논현로161길 57",
+      "mapx": "313901",
+      "mapy": "547126"
+    },
+    {
+      "title": "붓처스컷 광화문점",
+      "link": "http:\/\/dinehill.co.kr\/",
+      "category": "음식점>스테이크,립",
+      "description": "",
+      "telephone": "",
+      "address": "서울특별시 중구 태평로1가 84",
+      "roadAddress": "서울특별시 중구 세종대로 136 서울파이낸스센터 지하2층",
+      "mapx": "309920",
+      "mapy": "552295"
+    }
+  ]
+}

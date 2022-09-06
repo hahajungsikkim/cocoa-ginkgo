@@ -1,5 +1,6 @@
 package com.kakao.assignment.exception;
 
+import com.kakao.assignment.dto.common.ApiResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -19,12 +20,12 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class ExceptionControllerAdvisor extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(CustomException.class)
-    protected ResponseEntity<ExceptionEntity> handleCustomException(CustomException e) {
+    protected ResponseEntity<ApiResponse> handleCustomException(CustomException e) {
         return ExceptionEntity.toResponseEntity(e.getExceptionEnum());
     }
 
     @ExceptionHandler(Exception.class)
-    protected ResponseEntity<ExceptionEntity> handleException(Exception e) {
+    protected ResponseEntity<ApiResponse> handleException(Exception e) {
         log.error(e.getMessage(), e);
 
         ExceptionEnum exEnum = ExceptionEnum.INTERNAL_ERROR;
@@ -41,11 +42,11 @@ public class ExceptionControllerAdvisor extends ResponseEntityExceptionHandler {
         return ResponseEntity
                 .status(exEnum.getStatus())
                 .contentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE))
-                .body(ExceptionEntity.builder()
+                .body(ApiResponse.createError(ExceptionEntity.builder()
                         .code(exEnum.getCode())
                         .message(exEnum.getMessage())
                         .detail(fieldError != null ? fieldError.getDefaultMessage() : "")
-                        .build()
+                        .build())
                 );
     }
 
@@ -59,7 +60,7 @@ public class ExceptionControllerAdvisor extends ResponseEntityExceptionHandler {
                 .message(exEnum.getMessage())
                 .build();
 
-        return super.handleExceptionInternal(e, exEntity, headers, exEnum.getStatus(), request);
+        return super.handleExceptionInternal(e, ApiResponse.createError(exEntity), headers, exEnum.getStatus(), request);
     }
 
 }

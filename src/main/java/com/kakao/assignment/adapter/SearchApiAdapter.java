@@ -1,6 +1,10 @@
 package com.kakao.assignment.adapter;
 
+import com.kakao.assignment.dto.Place;
+
+import java.util.List;
+
 public interface SearchApiAdapter {
 
-    void searchFromOpenApi(String keyword, int count);
+    List<Place> searchFromOpenApi(String keyword, int count);
 }

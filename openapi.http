@@ -1,5 +1,5 @@
 ###
-GET https://openapi.naver.com/v1/search/local.json?query=strawberry&display=10
+GET https://openapi.naver.com/v1/search/local.json?query=스타필드&display=5
 X-Naver-Client-Id: gWm0ElB1RX6DAjcxGfQ8
 X-Naver-Client-Secret: v5sxoZKdW6
 
@@ -7,8 +7,7 @@ X-Naver-Client-Secret: v5sxoZKdW6
 ### Client Secret : v5sxoZKdW6
 
 ###
-GET https://dapi.kakao.com/v2/local/search/keyword.json?query=strawberry
+GET https://dapi.kakao.com/v2/local/search/keyword.json?query=스타필드&size=5
 Authorization: KakaoAK 332bb307e35d65b793cdeac9e3de85a7
 
 ### REST API 키 : 332bb307e35d65b793cdeac9e3de85a7
-#Host: dapi.kakao.com

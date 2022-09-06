@@ -1,5 +1,6 @@
 package com.kakao.assignment.controller;
 
+import com.kakao.assignment.dto.common.ApiResponse;
 import com.kakao.assignment.service.SearchService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +15,14 @@ public class SearchController {
     private final SearchService searchService;
 
     @GetMapping(value = "/v1/place")
-    public ResponseEntity<?> place(@RequestParam String keyword) {
+    public ResponseEntity<ApiResponse<?>> place(@RequestParam String keyword) {
 
-        return ResponseEntity.ok().body(searchService.getPlaceList(keyword));
+        return ResponseEntity.ok().body(ApiResponse.createSuccess(searchService.getPlaceList(keyword)));
     }
 
-//    @GetMapping(value = "/v1/keyword")
-//    public ResponseEntity<?> keyword() {
-//
-//        return ResponseEntity.ok().body(searchService.keyword());
-//    }
+    @GetMapping(value = "/v1/keyword")
+    public ResponseEntity<ApiResponse<?>> keyword() {
+
+        return ResponseEntity.ok().body(ApiResponse.createSuccess(searchService.getKeywordList()));
+    }
 }
