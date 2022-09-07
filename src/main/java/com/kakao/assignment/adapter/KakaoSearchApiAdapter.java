@@ -1,6 +1,7 @@
 package com.kakao.assignment.adapter;
 
 import com.kakao.assignment.dto.Place;
+import com.kakao.assignment.util.RegexUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONArray;
@@ -41,9 +42,6 @@ public class KakaoSearchApiAdapter implements SearchApiAdapter {
     @Value("${openapi.kakao.place.address-road}")
     private String ADDRESS_ROAD;
 
-    @Value("${common.html-regex}")
-    private String HTML_REGEX;
-
     @Override
     public List<Place> searchFromOpenApi(String keyword, int count) {
 
@@ -78,9 +76,9 @@ public class KakaoSearchApiAdapter implements SearchApiAdapter {
                     .map(document -> {
                         JSONObject documentJO = (JSONObject) document;
                         return new Place(
-                                String.valueOf(documentJO.get(NAME)).replaceAll(HTML_REGEX, ""),
-                                String.valueOf(documentJO.get(ADDRESS)).replaceAll(HTML_REGEX, ""),
-                                String.valueOf(documentJO.get(ADDRESS_ROAD)).replaceAll(HTML_REGEX, "")
+                                RegexUtil.replaceString(String.valueOf(documentJO.get(NAME))),
+                                RegexUtil.replaceString(String.valueOf(documentJO.get(ADDRESS))),
+                                RegexUtil.replaceString(String.valueOf(documentJO.get(ADDRESS_ROAD)))
                         );
                     })
                     .collect(Collectors.toList());

@@ -25,9 +25,6 @@ spring:
       ddl-auto: create
     show-sql: true
 
-
-common:
-  html-regex: <(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>
 openapi:
   kakao:
     url: https://dapi.kakao.com/v2/local/search/keyword.json
