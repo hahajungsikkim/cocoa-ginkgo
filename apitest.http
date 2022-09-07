@@ -1,32 +1,32 @@
 ###
-GET http://localhost:8080/v1/place?keyword=스타필드
-
-###
-GET http://localhost:8080/v1/place?keyword=스타필드
-
-###
 GET http://localhost:8080/v1/place?keyword=고양이
 
 ###
 GET http://localhost:8080/v1/place?keyword=곱창
 
 ###
-GET http://localhost:8080/v1/place?keyword=스타필드
-
-###
-GET http://localhost:8080/v1/place?keyword=스타필드
-
-###
-GET http://localhost:8080/v1/place?keyword=막창
-
-###
-GET http://localhost:8080/v1/place?keyword=막창
-
-###
-GET http://localhost:8080/v1/place?keyword=스타필드
-
-###
 GET http://localhost:8080/v1/place?keyword=양대창
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
+
+###
+GET http://localhost:8080/v1/place?keyword=막창
+
+###
+GET http://localhost:8080/v1/place?keyword=막창
+
+###
+GET http://localhost:8080/v1/place?keyword=스타필드
 
 ###
 GET http://localhost:8080/v1/place?keyword=스타필드
