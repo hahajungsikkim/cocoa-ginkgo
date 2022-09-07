@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 public class KeywordResult {
-    private List<KeywordManagement> keywords = new ArrayList<>();
+    private final List<KeywordManagement> keywords = new ArrayList<>();
 
     public void addKeywords(List<KeywordManagement> keywordList) {
         this.keywords.addAll(keywordList);

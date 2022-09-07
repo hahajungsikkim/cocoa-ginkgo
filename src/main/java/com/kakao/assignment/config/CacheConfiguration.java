@@ -13,16 +13,16 @@ import org.springframework.scheduling.annotation.Scheduled;
 public class CacheConfiguration {
 
     public static final String PLACE = "place";
+    public static final String KEYWORD = "keyword";
 
     @Bean
     public CacheManager cacheManager() {
-        ConcurrentMapCacheManager cacheManager = new ConcurrentMapCacheManager(PLACE);
-        return cacheManager;
+        return new ConcurrentMapCacheManager(PLACE, KEYWORD);
     }
 
-    @CacheEvict(allEntries = true, value = {PLACE})
-    @Scheduled(fixedDelay = 10 * 60 * 1000, initialDelay = 500) // flush cache each 10 minutes
+    @CacheEvict(allEntries = true, value = {PLACE}) // flush cache
+    @Scheduled(fixedDelay = 10 * 60 * 1000, initialDelay = 500) // each 10 minutes
     public void reportCacheEvict() {
-        log.info("flush cache");
+        log.info("flush cache [target=" + PLACE + "]");
     }
 }

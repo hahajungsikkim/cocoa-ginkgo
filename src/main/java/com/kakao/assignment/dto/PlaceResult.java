@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 public class PlaceResult {
-    private List<Place> places = new ArrayList<>();
+    private final List<Place> places = new ArrayList<>();
 
     public void addPlaces(List<Place> placeList) {
         this.places.addAll(placeList);

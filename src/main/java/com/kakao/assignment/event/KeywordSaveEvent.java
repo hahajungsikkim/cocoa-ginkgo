@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationEvent;
 @Getter
 public class KeywordSaveEvent extends ApplicationEvent {
 
-    private String keyword;
+    private final String keyword;
 
     public KeywordSaveEvent(Object source, String keyword) {
         super(source);

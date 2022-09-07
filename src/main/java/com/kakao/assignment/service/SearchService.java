@@ -5,12 +5,11 @@ import com.kakao.assignment.dto.KeywordResult;
 import com.kakao.assignment.dto.Place;
 import com.kakao.assignment.dto.PlaceResult;
 import com.kakao.assignment.entity.KeywordManagement;
-import com.kakao.assignment.event.publisher.SpringEventPublisher;
 import com.kakao.assignment.repository.KeywordRepository;
-import com.sun.istack.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,12 +29,15 @@ public class SearchService {
     private final SearchApiAdapter naverSearchApiAdapter;
     private final KeywordRepository keywordRepository;
 
+    public static final String PLACE = "place";
+    public static final String KEYWORD = "keyword";
+
     @Value("${openapi.kakao.search-count}")
     private int KAKAO_SEARCH_COUNT;
     @Value("${openapi.naver.search-count}")
     private int NAVER_SEARCH_COUNT;
 
-    @Cacheable(value = "place", key = "#keyword")
+    @Cacheable(value = {PLACE}, key = "#keyword")
     public PlaceResult getPlaceList(String keyword) {
         // 1. search with openapi
         List<Place> kakaoPlaces = kakaoSearchApiAdapter.searchFromOpenApi(keyword, KAKAO_SEARCH_COUNT);
@@ -53,7 +55,8 @@ public class SearchService {
         return result;
     }
 
-    private Set<String> getDistinctPlaces(@NotNull List<Place>... placesList) {
+    @SafeVarargs
+    private Set<String> getDistinctPlaces(List<Place>... placesList) {
         List<String> places = new ArrayList<>();
         for (List<Place> pl : placesList) {
             places.addAll(pl.stream().map(p -> p.getTitle().replaceAll(" ", "")).collect(Collectors.toList()));
@@ -77,6 +80,7 @@ public class SearchService {
     }
 
     @Transactional(readOnly = true)
+    @Cacheable(value = {KEYWORD})
     public KeywordResult getKeywordList() {
         final List<KeywordManagement> keywordManagements = keywordRepository.findTop10ByOrderByCountDescKeywordAsc();
 
@@ -87,15 +91,11 @@ public class SearchService {
     }
 
     @Transactional
+    @CacheEvict(allEntries = true, value = {KEYWORD})
     public void saveKeyword(String keyword) {
         KeywordManagement keywordManagement = keywordRepository.findByIdForUpdate(keyword).orElse(
                 new KeywordManagement(keyword, 0)
         );
-        try {
-            Thread.sleep(800);
-        } catch (Exception e) {
-
-        }
         keywordManagement.plusCount();
         keywordRepository.save(keywordManagement);
     }
