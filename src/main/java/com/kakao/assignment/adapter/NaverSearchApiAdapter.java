@@ -69,6 +69,7 @@ public class NaverSearchApiAdapter implements SearchApiAdapter {
 
     private List<Place> convertToPlace(String jsonString) {
         if ("fail".equals(jsonString)) {
+            log.error("Naver Open Api Response Error");
             return new ArrayList<>();
         }
         try {

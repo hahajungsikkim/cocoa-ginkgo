@@ -11,9 +11,10 @@ import com.sun.istack.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,7 +28,6 @@ public class SearchService {
 
     private final SearchApiAdapter kakaoSearchApiAdapter;
     private final SearchApiAdapter naverSearchApiAdapter;
-    private final SpringEventPublisher springEventPublisher;
     private final KeywordRepository keywordRepository;
 
     @Value("${openapi.kakao.search-count}")
@@ -35,18 +35,16 @@ public class SearchService {
     @Value("${openapi.naver.search-count}")
     private int NAVER_SEARCH_COUNT;
 
+    @Cacheable(value = "place", key = "#keyword")
     public PlaceResult getPlaceList(String keyword) {
-        // 1. keyword save
-        springEventPublisher.publishKeywordSaveEvent(keyword);
-
-        // 2. search with openapi
+        // 1. search with openapi
         List<Place> kakaoPlaces = kakaoSearchApiAdapter.searchFromOpenApi(keyword, KAKAO_SEARCH_COUNT);
         List<Place> naverPlaces = naverSearchApiAdapter.searchFromOpenApi(keyword, NAVER_SEARCH_COUNT);
 
-        // 3. find duplicated list (condition = replace empty space)
+        // 2. find duplicated list (condition = replace empty space)
         Set<String> distinctPlaces = getDistinctPlaces(kakaoPlaces, naverPlaces);
 
-        // 4. fill result (1st = duplicated places, 2nd = kakao places, 3rd = naver places)
+        // 3. fill result (1st = duplicated places, 2nd = kakao places, 3rd = naver places)
         PlaceResult result = new PlaceResult();
         result.addPlaces(getDuplicatedPlaces(kakaoPlaces, distinctPlaces, true)); // 중복되는 장소 1순위
         result.addPlaces(getDuplicatedPlaces(kakaoPlaces, distinctPlaces, false)); // 카카오 장소 2순위
@@ -78,6 +76,7 @@ public class SearchService {
         }
     }
 
+    @Transactional(readOnly = true)
     public KeywordResult getKeywordList() {
         final List<KeywordManagement> keywordManagements = keywordRepository.findTop10ByOrderByCountDescKeywordAsc();
 
@@ -92,6 +91,11 @@ public class SearchService {
         KeywordManagement keywordManagement = keywordRepository.findByIdForUpdate(keyword).orElse(
                 new KeywordManagement(keyword, 0)
         );
+        try {
+            Thread.sleep(800);
+        } catch (Exception e) {
+
+        }
         keywordManagement.plusCount();
         keywordRepository.save(keywordManagement);
     }

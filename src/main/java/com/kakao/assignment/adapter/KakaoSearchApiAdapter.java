@@ -67,6 +67,7 @@ public class KakaoSearchApiAdapter implements SearchApiAdapter {
 
     private List<Place> convertToPlace(String jsonString) {
         if ("fail".equals(jsonString)) {
+            log.error("Kakao Open Api Response Error");
             return new ArrayList<>();
         }
         try {

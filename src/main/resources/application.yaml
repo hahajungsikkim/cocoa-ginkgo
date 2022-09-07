@@ -25,12 +25,14 @@ spring:
       ddl-auto: create
     show-sql: true
 
+
 common:
   html-regex: <(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>
 openapi:
   kakao:
     url: https://dapi.kakao.com/v2/local/search/keyword.json
-    api-key: KakaoAK 332bb307e35d65b793cdeac9e3de85a7
+    #    api-key: KakaoAK 332bb307e35d65b793cdeac9e3de85a7
+    api-key: ENC(tREsoGFN9qGQHCGofeS4orD2wOwPpoZFM0o0dAz83y7miOx2zgteOxQEdTzXD+xlJdK0XSKbLd0=)
     place:
       objects: documents
       name: place_name
@@ -39,11 +41,17 @@ openapi:
     search-count: 5
   naver:
     url: https://openapi.naver.com/v1/search/local.json
-    client-id: gWm0ElB1RX6DAjcxGfQ8
-    client-secret: v5sxoZKdW6
+    #    client-id: gWm0ElB1RX6DAjcxGfQ8
+    client-id: ENC(bL/9J1zOOUTH9f0gduj1eWa9gPApyCqu1Af3YJppkZc=)
+    #    client-secret: v5sxoZKdW6
+    client-secret: ENC(FDAXIZZQhtmtE6CxYy0GqHYTMVIecQ4E)
     place:
       objects: items
       name: title
       address: address
       address-road: roadAddress
     search-count: 5
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor

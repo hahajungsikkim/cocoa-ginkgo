@@ -1,6 +1,7 @@
 package com.kakao.assignment.controller;
 
 import com.kakao.assignment.dto.common.ApiResponse;
+import com.kakao.assignment.event.publisher.SpringEventPublisher;
 import com.kakao.assignment.exception.CustomException;
 import com.kakao.assignment.exception.ExceptionEnum;
 import com.kakao.assignment.service.SearchService;
@@ -16,12 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class SearchController {
 
     private final SearchService searchService;
+    private final SpringEventPublisher springEventPublisher;
 
     @GetMapping(value = "/v1/place")
     public ResponseEntity<ApiResponse<?>> place(@RequestParam String keyword) {
         if (!StringUtils.hasText(keyword)) {
             throw new CustomException(ExceptionEnum.NO_REQUIRED_DATA);
         }
+
+        springEventPublisher.publishKeywordSaveEvent(keyword);
         return ResponseEntity.ok().body(ApiResponse.createSuccess(searchService.getPlaceList(keyword)));
     }
 
